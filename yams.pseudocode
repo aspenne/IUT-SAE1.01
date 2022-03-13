@@ -1,0 +1,68 @@
+procédure prenom (Ent F J1 : chaîne(7) ent F J2 : chaîne(7)) c'est
+
+// cette procédure demande aux joueurs de rentrer leur noms à tour de role
+// tant que leur noms dépasse 7 caractère on lui redemande de saisir son nom
+
+procédure affiche_tableau () c'est
+
+// Affiche le tableau du yams
+
+procédure lancement_dés () c'est
+
+// Cette procédure demande aux joueurs si il souhaite oui ou non lancé les dés
+// si il ne souhaite pas on lui redemande jusqu'a ce qu'il souhaite
+
+procédure relancer () c'est
+
+// Cette procédure demande d'abords aux joueurs si ils veulent relancer ou conserver leur dés 
+// si ils souhaitent les conserver alors on lance la fonction choix des propositions sinon on lance 
+choisir_dés()
+
+procédure choisir_dés () c'est
+
+// Cette procédure est à la suite de relancer et demande au joueur quel dé(s) souhaite t'il 
+// relancer avec un maximum de 3 relances quand je le joueur a fini ces 3 relances ou souhaite
+// conserver ses dés il doit écrire conserver
+
+procédure complet_tab() c'est
+
+// Cette foncion se lance quand le joueur a séléctionné ses dés, alors cette fonction lui affiche
+// le tableau et lui demande quel case veut-il remplir et renvoi ce tableau une fois la case rempli
+affiche_tableau()
+
+
+fonction gagnants (Ent F J1 : chaîne(7) ent F J2 : chaîne(7)) délivre chaîne(20) c'est 
+
+// Cette fonction calcule la somme des points et retourne le gagnant de la partie c'est à dire
+// soit "J1" : gagnant soit "J2" : gagnants 
+
+
+procédure calcul (Ent F J1 : chaîne(7) ent F J2 : chaîne(7)) 
+
+// Cette fonction calcule le résultat de toutes les cases pour "J1" et "J2" et retourne le resultat
+// dans le tableau 
+
+programme Yams c'est
+début
+    J1 : chaîne(7);
+    J2 : chaîne(7);
+    compteur : entier;
+    procédure prenom (Ent E J1 : chaîne(7) ent E J2 : chaîne(7));
+    procédure affiche_tableau ();
+    pour compteur de 1 à 27  pas de 1 faire
+        procédure lancement_dés ();
+        procédure relancer();
+        procédure complet_tab();
+        procédure calcul();
+        fonction gagnants (Ent E J1 : chaîne(7) ent E J2 : chaîne(7));
+    finfaire
+fin
+
+
+
+
+
+
+
+
+
